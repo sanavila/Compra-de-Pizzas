@@ -51,3 +51,20 @@ function closeModal(){
 elementAll('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach((item)=> {
     item.addEventListener('click', closeModal); 
 });
+
+element('.pizzaInfo--qtmenos').addEventListener('click', ()=> {
+    if (modalQt > 1) {
+        modalQt--;
+        element('.pizzaInfo--qt').innerHTML = modalQt;
+    }
+});
+element('.pizzaInfo--qtmais').addEventListener('click', ()=> {
+    modalQt++;
+    element('.pizzaInfo--qt').innerHTML = modalQt;
+});
+elementAll('.pizzaInfo--size').forEach((size, sizeIndex)=>{
+   size.addEventListener('click', (e)=> {
+        element('.pizzaInfo--size.selected').classList.remove('selected');
+        size.classList.add('selected');
+   })
+})
